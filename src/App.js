@@ -8,22 +8,20 @@ import { Route, BrowserRouter } from 'react-router-dom';
 import News from './components/News/News';
 import Music from './components/Music/Music';
 
-const App = () => {
+const App = (props) => {
   return (
     <BrowserRouter>
       <div className = "app-wraper">
         <Header />
         <Navbar />
         <div className = "app-wrapper-content">
-          <Route path = "/Dialogs" component = {Dialogs} />
-          <Route path = "/Profile" component = {Profile} />
-          <Route path = "/News" component = {News} />
-          <Route path = "/Music" component = {Music} />
-        </div>
-          
+          <Route path = "/Dialogs" render = {() => <Dialogs state = {props.state.messagesPage}/>} />
+          <Route path = "/Profile" render = {() => <Profile state = {props.state.profilePage}/>} />
+          <Route path = "/News" render = {() => <News />} />
+          <Route path = "/Music" render = {() => <Music />} />
+        </div>    
       </div>
-    </BrowserRouter>
-    
+    </BrowserRouter> 
   );
 }
 
