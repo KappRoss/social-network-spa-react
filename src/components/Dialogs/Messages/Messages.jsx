@@ -1,10 +1,15 @@
 import React from 'react';
-import ds from './../Dialogs.module.css';
+import m from './Messages.module.css';
+import SendPlace from './SendElement/sendPlace';
 
 //component for  display DialogsItem`s messages
 const Messages = (props) => {
     return(
-        <div className = {ds.dialog}>{props.dialog}</div>
+        <div>  
+            <div className = {m.dialog}>{props.dialog}</div>
+            <SendPlace />
+        </div> 
+          
     )
 }
 
