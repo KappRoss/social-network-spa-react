@@ -52,7 +52,7 @@ let mapStateToProps = (state) => {
         pageSize: state.usersPage.pageSize,
         totalUsers: state.usersPage.totalUsers,
         currentPage: state.usersPage.currentPage,
-        isFatching: state.usersPage.isFatching
+        isFetching: state.usersPage.isFetching
     }
 }
 let mapDispatchToProps = (dispatch) => {
