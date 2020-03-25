@@ -5,3 +5,6 @@
   .header img{
     width:4em;
   }
+  .loginIcon{
+    float: right;
+  }
