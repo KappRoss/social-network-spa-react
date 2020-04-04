@@ -1,10 +1,8 @@
 import React from 'react';
-import * as axios from 'axios';
 import { connect } from 'react-redux';
 import { follow, unfollow, setCurrentPage, toggleFollowFetching, getUsers } from '../../Redux/usersReducer';
 import Users from './Users';
 import Preloader from '../common/preloader/preloader';
-import { usersAPI } from '../../api/api';
 
 class UsersContainer extends React.Component {
 

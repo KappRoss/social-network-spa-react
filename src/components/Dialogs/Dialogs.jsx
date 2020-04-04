@@ -2,6 +2,7 @@ import React from 'react';
 import ds from './Dialogs.module.css';
 import Messages from './Messages/Messages';
 import DialogsItem from './DialogsItem/DialogsItem';
+import { Redirect } from 'react-router-dom';
 
 const Dialogs = (props) => {
 
@@ -18,6 +19,8 @@ const Dialogs = (props) => {
         let body = event.target.value;
         props.updateNewMessageBody(body);
     }
+
+    
 
     return(
         <div className = {ds.dialogS}>
