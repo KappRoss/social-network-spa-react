@@ -1,38 +1,45 @@
 import React from 'react';
 import p from './MyPosts.module.css';
 import Post from './Post/Post.js';
+import {Field, reduxForm} from 'redux-form';
+import { required } from '../../../utilites/validators/validator';
 
 const MyPosts = (props) => {
 
     let postsElement = props.posts.map(p => <Post id = {p.id} message = {p.message} likesCount = {p.likesCount}/>)
 
-    let newPostElement = React.createRef();
-
-    let onAddPost = () => {
-        props.addPost();
+    let onAddPost = (value) => {
+        props.addPost(value.newPostText);
     }
 
-    let onPostChange = () => {
-        let text = newPostElement.current.value;
-        props.updateNewPostText(text)
-    }
     return(
         <div className = {p.generalContent}>
-            <div>
-                <div>
-                    <textarea onChange = {onPostChange}
-                            value = {props.newPostText} 
-                            ref = {newPostElement}></textarea>
-                </div>
-                <div>
-                    <button onClick={ onAddPost }>add post</button>
-                </div>
-            </div>
+            <MyPostsFormRedux onSubmit = {onAddPost}/>
             <div className = {p.postItems}>
                 {postsElement}
             </div>   
         </div>
     )
 }
+
+const MyPostsForm = (props) => {
+    return(
+        <form onSubmit = {props.handleSubmit}>
+            <div>
+                <Field 
+                    component = "textarea"
+                    name = "newPostText" 
+                    placeholder = "enter your post"
+                    validate = {[required]}
+                />
+            </div>
+            <div>
+                <button>add post</button>
+            </div>
+        </form>
+    )
+}
+
+const MyPostsFormRedux = reduxForm({form: 'MyPostsForm'})(MyPostsForm)
 
 export default MyPosts;
