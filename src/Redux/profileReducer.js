@@ -1,6 +1,5 @@
 import { profileAPI } from "../api/api";
 
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 const ADD_POST = 'ADD-POST';
 const SET_USER_PROFILE = 'SET_USER_PROFILE';
 const SET_STATUS = 'SET_STATUS';
@@ -9,8 +8,6 @@ let initialState = {
     postsData: [
         {id: 1, message: 'SomeTextsdgwergdsfg', likesCount: 12},
         {id: 2, message: 'SomeTextdfgsdfg', likesCount: 11},
-        {id: 3, message: 'SomeTextdfgdsfgdfsgfdgfdg', likesCount: 1},
-        {id: 4, message: 'SomeTextsdfgsdfsdfg', likesCount: 8},
     ],
     profile: null,
     status: ''
