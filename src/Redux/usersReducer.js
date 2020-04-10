@@ -19,14 +19,14 @@ let initialState = {
     isFetching: false,
     followProgres: [],
 }
-
+debugger;
 const usersReducer = (state = initialState, action) => {
     if (action.type === FOLLOW){
         return {
             ...state,
             users: state.users.map(item => {
                 if(item.id === action.userId){
-                    return {...item, follow: true}
+                    return {...item, followed: true}
                 }
                 return item;
             })
@@ -37,7 +37,7 @@ const usersReducer = (state = initialState, action) => {
             ...state,
             users: state.users.map(item => {
                 if(item.id === action.userId){
-                    return {...item, follow: false}
+                    return {...item, followed: false}
                 }
                 return item;
             })
@@ -87,12 +87,13 @@ export const toggleIsFetching = (isFetching) => ({type: TOGGLE_IS_FATCHING, isFe
 export const toggleFollowFetching = (isFetching, userId) => ({type: TOGGLE_FOLLOW_PROGRES, isFetching, userId});
 
 // THUNK below
-export const getUsers = (currentPage, pageSize) => {
+
+export const getUsers = (page, pageSize) => {
 
     return(dispatch) =>  {
         dispatch(toggleIsFetching(true))
-        dispatch(setCurrentPage(currentPage))
-        usersAPI.getUsers(currentPage, pageSize).then(data => {
+        dispatch(setCurrentPage(page))
+        usersAPI.getUsers(page, pageSize).then(data => {
             dispatch(toggleIsFetching(false))
             dispatch(setUsers(data.items))
             dispatch(setUsersTotalCount(data.totalCount))
@@ -105,7 +106,7 @@ export const follow = (userId) => {
         dispatch(toggleFollowFetching(true, userId))
         usersAPI.follow(userId)
         .then(response => {
-            if(response.data.resultCode == 0){
+            if(response.data.resultCode === 0){
                 dispatch(followSuccess(userId))
         }
         dispatch(toggleFollowFetching(false, userId))
@@ -118,7 +119,7 @@ export const unfollow = (userId) => {
         dispatch(toggleFollowFetching(true, userId))
         usersAPI.unfollow(userId)
         .then(response => {
-            if(response.data.resultCode == 0){
+            if(response.data.resultCode === 0){
                 dispatch(unfollowSuccess(userId))
         }
         dispatch(toggleFollowFetching(false, userId))
