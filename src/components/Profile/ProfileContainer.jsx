@@ -9,7 +9,7 @@ import { compose } from 'redux';
 class ProfileContainer extends React.Component {
 
     componentDidMount(){
-        
+        console.log('didMount');
         let userId = this.props.match.params.userId;
         
         if (!userId){
@@ -21,6 +21,7 @@ class ProfileContainer extends React.Component {
     }
 
     render(){
+        console.log('render')
         return(
             <Profile 
                 {...this.props} 

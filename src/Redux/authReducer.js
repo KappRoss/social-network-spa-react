@@ -1,7 +1,7 @@
 import { authAPI } from "../api/api";
 import {stopSubmit} from "redux-form";
 
-const SET_USER_DATA = 'SET_USER_DATA';
+const SET_USER_DATA = 'auth/SET_USER_DATA';
 
 let initialState = {
     id: null,
@@ -22,35 +22,29 @@ let authReducer = (state = initialState, action) => {
 
 export const setAuthUserData = (id, email, login, isAuth) => ({type:SET_USER_DATA, payload: {id, email, login, isAuth}})
 
-export const authMe = () => (dispath) => {
-    authAPI.authMe()
-    .then(response => {
+export const authMe = () => async (dispath) => {
+    let response = await authAPI.authMe()
         if (response.data.resultCode === 0){
             let {id, email, login} = response.data.data
             dispath(setAuthUserData(id, email, login, true))
         }     
-    })
 }
 
-export const login = (email, password, rememberMe) => (dispath) => {
-    authAPI.login(email, password, rememberMe)
-    .then(response => {
+export const login = (email, password, rememberMe) => async (dispath) => {
+    let response = await authAPI.login(email, password, rememberMe)
         if (response.data.resultCode === 0){
             dispath(authMe())
         } else{
             let message = response.data.messages.length > 0 ? response.data.messages[0] : "some error"; 
             dispath(stopSubmit("login", {_error: message}))
         }    
-    })
 }
 
-export const logout = () => (dispath) => {
-    authAPI.logout()
-    .then(response => {
+export const logout = () => async (dispath) => {
+    let response = await authAPI.logout()
         if (response.data.resultCode === 0){
             dispath(setAuthUserData(null, null, null, false))
-        }     
-    })
+        }
 }
 
 export default authReducer;

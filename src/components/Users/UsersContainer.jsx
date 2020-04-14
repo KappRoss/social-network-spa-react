@@ -7,6 +7,10 @@ import {getUsersState, getPageSize, getTotalUsers, getCurrentPage, getIsFetching
 
 class UsersContainer extends React.Component {
 
+    shouldComponentUpdate(nextProps, nextState){
+        return nextProps !== this.props || nextState !== this.state
+    }
+
     componentDidMount(){
         this.props.getUsers(this.props.currentPage, this.props.pageSize);
     }

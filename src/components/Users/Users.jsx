@@ -1,59 +1,28 @@
 import React from 'react';
-import userPhoto from '../../assets/imges/userIcon.jpg';
-import style from './Users.module.css';
-import { NavLink } from 'react-router-dom';
-import * as axios from 'axios';
-import { usersAPI } from '../../api/api';
+import Paginator from './paginator';
+import User from './User';
 
-    const Users = (props) => {
-
-        let pagesCount = Math.ceil(props.totalUsers / props.pageSize);
-        let pages = [];
-        for(let i = 1; i <= pagesCount; i++ ){
-            pages.push(i)
-        }
-
-        return (
-            <div>
-                <div>
-                    {pages.map( p => {
-                        return <span className = {props.currentPage === p && style.selectPage}
-                        onClick = {() => {props.onPageChanged(p)}}>{p}</span>
-                    })}
-                </div>
-                {
-                props.users.map( u => <div key = {u.id}>
-                    <span>
-                        <div>
-                            <NavLink to = {'/profile/' + u.id}>
-                                <img className={style.imgIcon} src = {u.photos.small != null ? u.photos.small : userPhoto}/>
-                            </NavLink>
-                        </div>
-                        <div>
-                            {u.follow
-                                ?<button disabled = {props.followProgres.some(id => id === u.id)} onClick = { () => {
-                                    props.unfollow(u.id)
-                                }}>unfollow</button> 
-                                :<button disabled = {props.followProgres.some(id => id === u.id)} onClick = { () => {
-                                    props.follow(u.id)
-                                }}>follow</button> } 
-                        </div>
-                    </span>
-                    <div>
-                        <div>
-                            <div>{u.name}</div>
-                            <div>{u.status}</div>
-                        </div>
-                        <div>
-                            <div>{'u.location.country'}</div>
-                            <div>{'u.location.city'}</div>
-                        </div>
-                    </div>
-                </div>)
-            }
-            </div>
-        )
-    }
+const Users = (props) => {
+    return (
+        <div>
+            <Paginator 
+                currentPage = {props.currentPage}
+                onPageChanged = {props.onPageChanged}
+                totalUsers = {props.totalUsers}
+                pageSize = {props.pageSize}
+            />
+            {
+                props.users.map( u => <User 
+                                        user = {u}
+                                        followProgres = {props.followProgres}
+                                        unfollow = {props.unfollow}
+                                        follow = {props.follow}
+                                        key = {u.id}
+                                    />                         
+            )}
+        </div>
+    )
+}
 
 
 export default Users;
