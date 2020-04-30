@@ -1,0 +1,61 @@
+.loginContainer{
+    display: grid;
+    justify-content: center;
+    background-color:#121212;
+    height: 100vh;
+     
+}
+.loginForm{
+    background-color: grey;
+    margin: auto;
+    padding-right: 50px;
+    padding-left: 50px;
+    padding-bottom: 10px;
+    border: solid 2px rgb(14, 179, 230);
+    border-radius: 2px;
+    box-shadow: 0 0 20px rgb(14, 179, 230);
+
+}
+.title{
+    color: white;
+    text-shadow: 2px 2px 2px red;
+    text-align: center;
+    margin: 0;
+}
+.form{
+    display: grid;
+    grid-template-columns: 1fr ;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+.input{
+    border: none;
+    border-radius: 2px;
+    padding:5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    min-width: 200px;
+}
+.checkbox_group{
+    display: grid;
+    grid-template-columns: 10% 60% 30%;
+    align-items: center;
+    grid-column-end: auto;
+}
+.checkbox{
+    margin: 0;
+}
+.checkbox{
+    vertical-align: middle;
+}
+ .label{
+    font-size: 12px;
+} 
+.button_login{
+    margin-top: 3px;
+    border-radius: 3px;
+    float: right;
+}
+.b1{
+    display: inline-block;
+    
+}

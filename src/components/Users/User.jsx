@@ -6,11 +6,22 @@ import { NavLink } from 'react-router-dom';
     const User = ({ user , ...props}) => {
         return (
             <div className = {style.user}>          
-                    <span>
+                    <span className = {style.firstBlock}>
                         <div>
                             <NavLink to = {'/profile/' + user.id}>
                                 <img className={style.imgIcon} src = {user.photos.small != null ? user.photos.small : userPhoto}/>
                             </NavLink>
+                        </div>
+                        
+                    </span>
+                    <div className = {style.secondBlock}>
+                        <div>
+                            <div>{user.name}</div>
+                            <div>{user.status}</div>
+                        </div>
+                        <div>
+                            <div>{'user.location.country'}</div>
+                            <div>{'user.location.city'}</div>
                         </div>
                         <div>
                             {user.followed
@@ -20,16 +31,6 @@ import { NavLink } from 'react-router-dom';
                                 :<button disabled = {props.followProgres.some(id => id === user.id)} onClick = { () => {
                                     props.follow(user.id)
                                 }}>follow</button> } 
-                        </div>
-                    </span>
-                    <div>
-                        <div>
-                            <div>{user.name}</div>
-                            <div>{user.status}</div>
-                        </div>
-                        <div>
-                            <div>{'user.location.country'}</div>
-                            <div>{'user.location.city'}</div>
                         </div>
                     </div>
             </div>

@@ -1,9 +1,9 @@
 import React from 'react';
-import n from './News.module.css';
+import style from './News.module.css';
 
 const News = () => {
     return(
-        <div className = {n.flow}>
+        <div className = {style.flow}>
             <p>news</p>
         </div>
     )

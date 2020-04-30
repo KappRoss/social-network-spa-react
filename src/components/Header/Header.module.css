@@ -1,10 +1,71 @@
 .header{
+    display: grid;
     grid-area: header;
-    background-color: brown;
+    grid-template-columns: 10fr 2fr;
+    background-color: rgb(255, 115, 0);
+    border: solid 1px rgb(14, 179, 230);
+    border-radius: 2px;
+    box-shadow: 0 0 20px rgb(14, 179, 230);
+    height: 64px;
   }
-  .header img{
+  .logo{
     width:4em;
   }
   .loginIcon{
     float: right;
+    /* display: grid; */
+    height: 64px;
+  }
+  .login{
+    text-decoration: none;
+    color: black;
+    font-size: 24px;
+    text-align: center;
+    font-weight: bold;
+  }
+  .divLogIn{
+    display: grid;
+    /* grid-template-columns: 1fr 1fr 1fr; */
+    height: 64px;
+    align-items: center;
+    
+  }
+  .divLogOut{
+    display: grid;
+    grid-template-areas: 
+    "avatar name "
+    "avatar botton "
+    ;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 1fr;
+    height: 64px;
+    align-items: center;
+    text-align: left;
+  }
+  .loginName{
+    grid-area: name;
+    margin-left: 10px;
+    font-style: italic;
+  }
+  .loginName:hover{
+    cursor: default;
+  }
+  .button{
+    grid-area: botton;
+    margin-left: 10px;
+  }
+  .divAvatar{
+    grid-area: avatar;
+    width: 60px;
+    height: 60px;
+    right: 2px;
+  }
+  .avatar{
+    border-radius: 50%;
+    width: 60px;
+  }
+  .avatar:hover{
+    box-sizing: border-box;
+    border: 2px solid rgb(255, 51, 0) ;
+    box-shadow: 0 0 20px rgb(255, 0, 0);
   }

@@ -28,19 +28,25 @@ const maxLength = maxLengthCreator(10);
 const TextArea = withFormElement("textarea")
 const MyPostsForm = (props) => {
     return(
-        <form onSubmit = {props.handleSubmit}>
+        <div className = {p.postForm}>
+            <form onSubmit = {props.handleSubmit }>
+                <img  alt=""/> 
+                 {/* src={props.profile.photos.large} */}
             <div>
                 <Field 
+                    className = {p.textAreaField}
                     component = {TextArea}
                     name = "newPostText" 
                     placeholder = "enter your post"
                     validate = {[required, maxLength]}
                 />
             </div>
-            <div>
+            <div className = {p.button}>
                 <button>add post</button>
             </div>
-        </form>
+            </form>
+        </div>
+        
     )
 }
 

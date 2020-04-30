@@ -1,15 +1,22 @@
 .nav{
     grid-area: nav;
-    background-color: chartreuse;
+    border: solid 1px rgb(14, 179, 230);
+    border-radius: 2px;
+    box-shadow: 0 0 20px rgb(14, 179, 230);
+    background-color: wheat;
   }
+.nav:hover{
+  background-color: rgba(255, 115, 0, 0.747);
+  box-shadow: 0 0 20px rgb(0, 137, 179);
+}
 .item{
     list-style-type: none;  
     
 }
 .item a{
-  color: white;
+  color: black;
   text-decoration: none;
 }
 .item a.active{
-  color: black;
+  font-weight: bold;
 }

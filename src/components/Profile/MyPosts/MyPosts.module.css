@@ -1,7 +1,21 @@
 .generalContent{
-    background-color: black;
+    /* background-color: black; */
 }
 .generalContent{
-    padding: 2em;
+    padding: 0.5em;
 }
+.postForm form{
+    display: grid;
+    grid-template-columns: 1fr 10fr 1fr;
+    background-color: rgb(255, 241, 214);
+}
+.textAreaField{
+    resize: none;
+    border: none;
+    background-color: rgb(255, 241, 214);
+    vertical-align: middle;
+    height: 1.6em;
+}
+.button{
 
+}

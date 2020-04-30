@@ -8,4 +8,37 @@
 }
 .user{
     padding: 15px;
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+}
+.firstBlock{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+.secondBlock div{
+    margin: 5px;
+}
+.pagination{
+    margin: 1em;    
+}
+.pagination span{
+    padding: 0.2em;
+    border: 1px solid white;  
+    
+}
+.pagination span:hover{
+   background-color: white;
+   cursor: pointer;
+}
+.pagination botton{
+    margin: 0.2em;
+    border: 1px solid black;
+    padding: 0.2em;
+    border-radius: 3px;
+}
+.pagination botton:hover{
+    background-color: white;
+    cursor: pointer;
 }

@@ -5,7 +5,8 @@ import { required, maxLengthCreator } from '../../utilites/validators/validator'
 import { connect } from 'react-redux';
 import { login, logout } from '../../Redux/authReducer';
 import { Redirect } from 'react-router-dom';
-import style from '../common/FormControls/Forms.module.css';
+import styleFormError from '../common/FormControls/Forms.module.css';
+import style from './login.module.css';
 
 const maxLength = maxLengthCreator(50)
  
@@ -13,17 +14,19 @@ const Input = withFormElement("input");
 
 const LoginForm = (props) => {
     return (
-        <form onSubmit = {props.handleSubmit}>
-                <div>
+        <form onSubmit = {props.handleSubmit} className = {style.form}>
+                <div >
                     <Field 
+                        className = {style.input}
                         placeholder = "email" 
                         name = "email" 
                         component = {Input}
                         validate = {[required, maxLength]}
                     />
                 </div>
-                <div>
+                <div >
                     <Field 
+                        className = {style.input}
                         type = "password"
                         placeholder = "password" 
                         name = "password" 
@@ -31,21 +34,29 @@ const LoginForm = (props) => {
                         validate = {[required, maxLength]}
                     />
                 </div>
-                <div>
+                <div className = {style.checkbox_group}>
+                    
                     <Field 
+                        className = {style.checkbox}
                         type = "checkbox" 
-                        name = "rememberMe" 
+                        name = "rememberMe"
+                        id = "rememberMe" 
                         component = {Input}
-                    />remember me
+                    /> 
+    
+                    <label for = "rememberMe" className = {style.label}>remember me</label>
+
+                    <div className = {style.b1}>
+                        <button className = {style.button_login}>Log in</button>
+                    </div>
+                    
                 </div>
                     {props.error 
-                        && <div className = {style.summuryError}>
+                        && <div className = {styleFormError.summuryError}>
                             {props.error}
                         </div> }
 
-                <div>
-                    <button>Login</button>
-                </div>
+                
             </form>
     )
 }
@@ -64,12 +75,15 @@ const Login = (props) => {
     }
 
     return(
-        <div>
-            <h1>LOGIN</h1>
-            <LoginReduxForm 
-                onSubmit = {onSubmit}
-
-            />
+        <div className = {style.loginContainer}>
+            <div></div>
+            <div className = {style.loginForm}>
+                <h1 className = {style.title}>LOGIN</h1>
+                <LoginReduxForm 
+                    onSubmit = {onSubmit}
+                />
+            </div>
+            <div></div>
         </div>
     )
 }
