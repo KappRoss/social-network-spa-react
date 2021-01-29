@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/KappRoss/social-network-spa-react/static/css/main.52ac5f88.chunk.css",
-    "main.js": "/KappRoss/social-network-spa-react/static/js/main.a056a163.chunk.js",
-    "main.js.map": "/KappRoss/social-network-spa-react/static/js/main.a056a163.chunk.js.map",
-    "runtime-main.js": "/KappRoss/social-network-spa-react/static/js/runtime-main.0d3b6f92.js",
-    "runtime-main.js.map": "/KappRoss/social-network-spa-react/static/js/runtime-main.0d3b6f92.js.map",
-    "static/js/2.01b70f62.chunk.js": "/KappRoss/social-network-spa-react/static/js/2.01b70f62.chunk.js",
-    "static/js/2.01b70f62.chunk.js.map": "/KappRoss/social-network-spa-react/static/js/2.01b70f62.chunk.js.map",
-    "index.html": "/KappRoss/social-network-spa-react/index.html",
-    "precache-manifest.1cfd48ca093ef07d8587ea60750af197.js": "/KappRoss/social-network-spa-react/precache-manifest.1cfd48ca093ef07d8587ea60750af197.js",
-    "service-worker.js": "/KappRoss/social-network-spa-react/service-worker.js",
-    "static/css/main.52ac5f88.chunk.css.map": "/KappRoss/social-network-spa-react/static/css/main.52ac5f88.chunk.css.map",
-    "static/js/2.01b70f62.chunk.js.LICENSE.txt": "/KappRoss/social-network-spa-react/static/js/2.01b70f62.chunk.js.LICENSE.txt",
-    "static/media/reloader.svg": "/KappRoss/social-network-spa-react/static/media/reloader.aeb3dcc8.svg",
-    "static/media/userIcon.jpg": "/KappRoss/social-network-spa-react/static/media/userIcon.fc3a244b.jpg"
+    "main.css": "/social-network-spa-react/static/css/main.67a550ec.chunk.css",
+    "main.js": "/social-network-spa-react/static/js/main.d2cc4e55.chunk.js",
+    "main.js.map": "/social-network-spa-react/static/js/main.d2cc4e55.chunk.js.map",
+    "runtime-main.js": "/social-network-spa-react/static/js/runtime-main.c28257a3.js",
+    "runtime-main.js.map": "/social-network-spa-react/static/js/runtime-main.c28257a3.js.map",
+    "static/js/2.8de36ac7.chunk.js": "/social-network-spa-react/static/js/2.8de36ac7.chunk.js",
+    "static/js/2.8de36ac7.chunk.js.map": "/social-network-spa-react/static/js/2.8de36ac7.chunk.js.map",
+    "index.html": "/social-network-spa-react/index.html",
+    "precache-manifest.1d8f833731500ba0b4f377ffbf4af510.js": "/social-network-spa-react/precache-manifest.1d8f833731500ba0b4f377ffbf4af510.js",
+    "service-worker.js": "/social-network-spa-react/service-worker.js",
+    "static/css/main.67a550ec.chunk.css.map": "/social-network-spa-react/static/css/main.67a550ec.chunk.css.map",
+    "static/js/2.8de36ac7.chunk.js.LICENSE.txt": "/social-network-spa-react/static/js/2.8de36ac7.chunk.js.LICENSE.txt",
+    "static/media/reloader.svg": "/social-network-spa-react/static/media/reloader.aeb3dcc8.svg",
+    "static/media/userIcon.jpg": "/social-network-spa-react/static/media/userIcon.fc3a244b.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.0d3b6f92.js",
-    "static/js/2.01b70f62.chunk.js",
-    "static/css/main.52ac5f88.chunk.css",
-    "static/js/main.a056a163.chunk.js"
+    "static/js/runtime-main.c28257a3.js",
+    "static/js/2.8de36ac7.chunk.js",
+    "static/css/main.67a550ec.chunk.css",
+    "static/js/main.d2cc4e55.chunk.js"
   ]
 }
